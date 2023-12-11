@@ -135,5 +135,10 @@ namespace CapaPresentacion
         {
             Abrir_Formulario((IconMenuItem)sender, new FRMreportes());
         }
+
+        private void submenu_negocio_Click(object sender, EventArgs e)
+        {
+            Abrir_Formulario(menu_mantenedor, new FRM_Negocio());
+        }
     }
 }

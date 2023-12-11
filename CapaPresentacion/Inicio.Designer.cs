@@ -39,15 +39,16 @@
             this.submenu_categoria = new FontAwesome.Sharp.IconMenuItem();
             this.submenu_producto = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_ventas = new FontAwesome.Sharp.IconMenuItem();
+            this.submenu_registrar_venta = new FontAwesome.Sharp.IconMenuItem();
+            this.submenu_verdetalle = new FontAwesome.Sharp.IconMenuItem();
             this.menu_compras = new FontAwesome.Sharp.IconMenuItem();
+            this.submenu_registrar_compra = new FontAwesome.Sharp.IconMenuItem();
+            this.submenu_ver_detalle_compra = new FontAwesome.Sharp.IconMenuItem();
             this.menu_clientes = new FontAwesome.Sharp.IconMenuItem();
             this.menu_proveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menu_reportes = new FontAwesome.Sharp.IconMenuItem();
             this.menu_acercade = new FontAwesome.Sharp.IconMenuItem();
-            this.submenu_registrar_venta = new FontAwesome.Sharp.IconMenuItem();
-            this.submenu_verdetalle = new FontAwesome.Sharp.IconMenuItem();
-            this.submenu_registrar_compra = new FontAwesome.Sharp.IconMenuItem();
-            this.submenu_ver_detalle_compra = new FontAwesome.Sharp.IconMenuItem();
+            this.submenu_negocio = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,7 +144,8 @@
             this.menu_mantenedor.AutoSize = false;
             this.menu_mantenedor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.submenu_categoria,
-            this.submenu_producto});
+            this.submenu_producto,
+            this.submenu_negocio});
             this.menu_mantenedor.IconChar = FontAwesome.Sharp.IconChar.Tools;
             this.menu_mantenedor.IconColor = System.Drawing.Color.Black;
             this.menu_mantenedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -187,6 +189,26 @@
             this.menu_ventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menu_ventas.Click += new System.EventHandler(this.menu_ventas_Click);
             // 
+            // submenu_registrar_venta
+            // 
+            this.submenu_registrar_venta.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.submenu_registrar_venta.IconColor = System.Drawing.Color.Black;
+            this.submenu_registrar_venta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.submenu_registrar_venta.Name = "submenu_registrar_venta";
+            this.submenu_registrar_venta.Size = new System.Drawing.Size(128, 22);
+            this.submenu_registrar_venta.Text = "Registrar";
+            this.submenu_registrar_venta.Click += new System.EventHandler(this.submenu_registrar_venta_Click);
+            // 
+            // submenu_verdetalle
+            // 
+            this.submenu_verdetalle.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.submenu_verdetalle.IconColor = System.Drawing.Color.Black;
+            this.submenu_verdetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.submenu_verdetalle.Name = "submenu_verdetalle";
+            this.submenu_verdetalle.Size = new System.Drawing.Size(128, 22);
+            this.submenu_verdetalle.Text = "Ver detalle";
+            this.submenu_verdetalle.Click += new System.EventHandler(this.submenu_verdetalle_Click);
+            // 
             // menu_compras
             // 
             this.menu_compras.AutoSize = false;
@@ -201,6 +223,26 @@
             this.menu_compras.Size = new System.Drawing.Size(122, 67);
             this.menu_compras.Text = "Compras";
             this.menu_compras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // submenu_registrar_compra
+            // 
+            this.submenu_registrar_compra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.submenu_registrar_compra.IconColor = System.Drawing.Color.Black;
+            this.submenu_registrar_compra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.submenu_registrar_compra.Name = "submenu_registrar_compra";
+            this.submenu_registrar_compra.Size = new System.Drawing.Size(128, 22);
+            this.submenu_registrar_compra.Text = "Registrar";
+            this.submenu_registrar_compra.Click += new System.EventHandler(this.submenu_registrar_compra_Click);
+            // 
+            // submenu_ver_detalle_compra
+            // 
+            this.submenu_ver_detalle_compra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.submenu_ver_detalle_compra.IconColor = System.Drawing.Color.Black;
+            this.submenu_ver_detalle_compra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.submenu_ver_detalle_compra.Name = "submenu_ver_detalle_compra";
+            this.submenu_ver_detalle_compra.Size = new System.Drawing.Size(128, 22);
+            this.submenu_ver_detalle_compra.Text = "Ver detalle";
+            this.submenu_ver_detalle_compra.Click += new System.EventHandler(this.submenu_ver_detalle_compra_Click);
             // 
             // menu_clientes
             // 
@@ -253,45 +295,12 @@
             this.menu_acercade.Text = "Acerca de";
             this.menu_acercade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // submenu_registrar_venta
+            // submenu_negocio
             // 
-            this.submenu_registrar_venta.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.submenu_registrar_venta.IconColor = System.Drawing.Color.Black;
-            this.submenu_registrar_venta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.submenu_registrar_venta.Name = "submenu_registrar_venta";
-            this.submenu_registrar_venta.Size = new System.Drawing.Size(180, 22);
-            this.submenu_registrar_venta.Text = "Registrar";
-            this.submenu_registrar_venta.Click += new System.EventHandler(this.submenu_registrar_venta_Click);
-            // 
-            // submenu_verdetalle
-            // 
-            this.submenu_verdetalle.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.submenu_verdetalle.IconColor = System.Drawing.Color.Black;
-            this.submenu_verdetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.submenu_verdetalle.Name = "submenu_verdetalle";
-            this.submenu_verdetalle.Size = new System.Drawing.Size(180, 22);
-            this.submenu_verdetalle.Text = "Ver detalle";
-            this.submenu_verdetalle.Click += new System.EventHandler(this.submenu_verdetalle_Click);
-            // 
-            // submenu_registrar_compra
-            // 
-            this.submenu_registrar_compra.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.submenu_registrar_compra.IconColor = System.Drawing.Color.Black;
-            this.submenu_registrar_compra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.submenu_registrar_compra.Name = "submenu_registrar_compra";
-            this.submenu_registrar_compra.Size = new System.Drawing.Size(180, 22);
-            this.submenu_registrar_compra.Text = "Registrar";
-            this.submenu_registrar_compra.Click += new System.EventHandler(this.submenu_registrar_compra_Click);
-            // 
-            // submenu_ver_detalle_compra
-            // 
-            this.submenu_ver_detalle_compra.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.submenu_ver_detalle_compra.IconColor = System.Drawing.Color.Black;
-            this.submenu_ver_detalle_compra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.submenu_ver_detalle_compra.Name = "submenu_ver_detalle_compra";
-            this.submenu_ver_detalle_compra.Size = new System.Drawing.Size(180, 22);
-            this.submenu_ver_detalle_compra.Text = "Ver detalle";
-            this.submenu_ver_detalle_compra.Click += new System.EventHandler(this.submenu_ver_detalle_compra_Click);
+            this.submenu_negocio.Name = "submenu_negocio";
+            this.submenu_negocio.Size = new System.Drawing.Size(180, 22);
+            this.submenu_negocio.Text = "Negocio";
+            this.submenu_negocio.Click += new System.EventHandler(this.submenu_negocio_Click);
             // 
             // Inicio
             // 
@@ -337,6 +346,7 @@
         private FontAwesome.Sharp.IconMenuItem submenu_verdetalle;
         private FontAwesome.Sharp.IconMenuItem submenu_registrar_compra;
         private FontAwesome.Sharp.IconMenuItem submenu_ver_detalle_compra;
+        private System.Windows.Forms.ToolStripMenuItem submenu_negocio;
     }
 }
 

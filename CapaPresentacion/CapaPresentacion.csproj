@@ -187,6 +187,12 @@
     <Compile Include="FRM_detalle_venta.Designer.cs">
       <DependentUpon>FRM_detalle_venta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRM_Negocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_Negocio.Designer.cs">
+      <DependentUpon>FRM_Negocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMventas.resx">
       <DependentUpon>FRMventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_Negocio.resx">
+      <DependentUpon>FRM_Negocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
