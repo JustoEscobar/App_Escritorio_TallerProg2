@@ -204,6 +204,7 @@
             this.cbo_estado.Name = "cbo_estado";
             this.cbo_estado.Size = new System.Drawing.Size(177, 21);
             this.cbo_estado.TabIndex = 17;
+
             // 
             // label8
             // 
