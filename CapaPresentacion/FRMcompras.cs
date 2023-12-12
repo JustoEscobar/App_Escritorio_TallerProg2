@@ -298,7 +298,7 @@ namespace CapaPresentacion
                 oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
                 oProveedor = new Proveedor() { IdProveedor = Convert.ToInt32(txt_idproveedor.Text) },
                 TipoDocumento = ((OpcionCombo)cbo_tipodocumento.SelectedItem).Texto,
-                NumeroDocumento = numeroDocumento,
+                NroDocumento = numeroDocumento,
                 MontoTotal=Convert.ToDecimal(txt_totalpagar.Text)
             };
 
