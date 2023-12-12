@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_busqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_limpiar_buscador = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar_dc = new FontAwesome.Sharp.IconButton();
             this.txt_doc_detalle = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_fecha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_buscar_dc = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_nrodocumento = new System.Windows.Forms.TextBox();
             this.txt_razonSocial = new System.Windows.Forms.TextBox();
@@ -123,6 +123,7 @@
             this.btn_limpiar_buscador.Text = "Limpiar";
             this.btn_limpiar_buscador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_limpiar_buscador.UseVisualStyleBackColor = false;
+            this.btn_limpiar_buscador.Click += new System.EventHandler(this.btn_limpiar_buscador_Click);
             // 
             // groupBox1
             // 
@@ -140,25 +141,6 @@
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Compra";
-            // 
-            // btn_buscar_dc
-            // 
-            this.btn_buscar_dc.BackColor = System.Drawing.Color.Silver;
-            this.btn_buscar_dc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar_dc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscar_dc.ForeColor = System.Drawing.Color.Black;
-            this.btn_buscar_dc.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.btn_buscar_dc.IconColor = System.Drawing.Color.Black;
-            this.btn_buscar_dc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_buscar_dc.IconSize = 20;
-            this.btn_buscar_dc.Location = new System.Drawing.Point(672, 40);
-            this.btn_buscar_dc.Name = "btn_buscar_dc";
-            this.btn_buscar_dc.Size = new System.Drawing.Size(75, 23);
-            this.btn_buscar_dc.TabIndex = 7;
-            this.btn_buscar_dc.Text = "Buscar";
-            this.btn_buscar_dc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_buscar_dc.UseVisualStyleBackColor = false;
-            this.btn_buscar_dc.Click += new System.EventHandler(this.btn_buscar_dc_Click);
             // 
             // txt_doc_detalle
             // 
@@ -210,6 +192,25 @@
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Fecha:";
+            // 
+            // btn_buscar_dc
+            // 
+            this.btn_buscar_dc.BackColor = System.Drawing.Color.Silver;
+            this.btn_buscar_dc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_buscar_dc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_buscar_dc.ForeColor = System.Drawing.Color.Black;
+            this.btn_buscar_dc.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.btn_buscar_dc.IconColor = System.Drawing.Color.Black;
+            this.btn_buscar_dc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_buscar_dc.IconSize = 20;
+            this.btn_buscar_dc.Location = new System.Drawing.Point(672, 40);
+            this.btn_buscar_dc.Name = "btn_buscar_dc";
+            this.btn_buscar_dc.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscar_dc.TabIndex = 7;
+            this.btn_buscar_dc.Text = "Buscar";
+            this.btn_buscar_dc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_buscar_dc.UseVisualStyleBackColor = false;
+            this.btn_buscar_dc.Click += new System.EventHandler(this.btn_buscar_dc_Click);
             // 
             // groupBox2
             // 
@@ -273,15 +274,15 @@
             // 
             this.dgvdatacompra.AllowUserToAddRows = false;
             this.dgvdatacompra.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdatacompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdatacompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvdatacompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdatacompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
@@ -292,9 +293,9 @@
             this.dgvdatacompra.MultiSelect = false;
             this.dgvdatacompra.Name = "dgvdatacompra";
             this.dgvdatacompra.ReadOnly = true;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdatacompra.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdatacompra.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvdatacompra.RowTemplate.Height = 28;
             this.dgvdatacompra.Size = new System.Drawing.Size(632, 204);
             this.dgvdatacompra.TabIndex = 36;
@@ -363,6 +364,7 @@
             this.btn_exportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_exportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_exportar.UseVisualStyleBackColor = false;
+            this.btn_exportar.Click += new System.EventHandler(this.btn_exportar_Click);
             // 
             // FRM_detalle_compra
             // 
