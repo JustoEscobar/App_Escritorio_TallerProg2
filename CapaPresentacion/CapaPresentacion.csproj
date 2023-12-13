@@ -202,6 +202,18 @@
     <Compile Include="FRM_Negocio.Designer.cs">
       <DependentUpon>FRM_Negocio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRM_ReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_ReporteCompras.Designer.cs">
+      <DependentUpon>FRM_ReporteCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_ReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_ReporteVentas.Designer.cs">
+      <DependentUpon>FRM_ReporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
