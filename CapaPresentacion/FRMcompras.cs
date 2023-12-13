@@ -279,15 +279,13 @@ namespace CapaPresentacion
 
             foreach (DataGridViewRow row in dgvdatacompra.Rows)
             {
-                detalle_compra.Rows.Add(
-                    new object[]
-                    {
+                detalle_compra.Rows.Add(new object[] {
                         Convert.ToInt32(row.Cells["IdProducto"].Value.ToString()),
                         row.Cells["PrecioCompra"].Value.ToString(),
                         row.Cells["PrecioVenta"].Value.ToString(),
                         row.Cells["Cantidad"].Value.ToString(),
                         row.Cells["SubTotal"].Value.ToString()
-                    });
+                 });
             }
 
             int idcorrelativo = new CN_Compra().obtenerCorrelativo();

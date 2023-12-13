@@ -262,6 +262,9 @@
     <EmbeddedResource Include="FRM_detalle_compra.resx">
       <DependentUpon>FRM_detalle_compra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRM_detalle_venta.resx">
+      <DependentUpon>FRM_detalle_venta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRM_Negocio.resx">
       <DependentUpon>FRM_Negocio.cs</DependentUpon>
     </EmbeddedResource>
