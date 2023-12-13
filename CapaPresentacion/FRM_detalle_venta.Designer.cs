@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_buscar_dc = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_doc_detalle = new System.Windows.Forms.TextBox();
@@ -51,19 +51,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_totalpagar = new System.Windows.Forms.TextBox();
-            this.dgvdatacompra = new System.Windows.Forms.DataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvdataventa = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_monto_pago = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_cambio = new System.Windows.Forms.TextBox();
             this.btn_exportar = new FontAwesome.Sharp.IconButton();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdatacompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdataventa)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_buscar_dc
@@ -83,6 +83,7 @@
             this.btn_buscar_dc.Text = "Buscar";
             this.btn_buscar_dc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscar_dc.UseVisualStyleBackColor = false;
+            this.btn_buscar_dc.Click += new System.EventHandler(this.btn_buscar_dc_Click);
             // 
             // groupBox1
             // 
@@ -171,6 +172,7 @@
             this.btn_limpiar_buscador.Text = "Limpiar";
             this.btn_limpiar_buscador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_limpiar_buscador.UseVisualStyleBackColor = false;
+            this.btn_limpiar_buscador.Click += new System.EventHandler(this.btn_limpiar_buscador_Click);
             // 
             // txt_busqueda
             // 
@@ -293,61 +295,35 @@
             this.txt_totalpagar.TabIndex = 44;
             this.txt_totalpagar.Text = "0";
             // 
-            // dgvdatacompra
+            // dgvdataventa
             // 
-            this.dgvdatacompra.AllowUserToAddRows = false;
-            this.dgvdatacompra.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdatacompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvdatacompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdatacompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvdataventa.AllowUserToAddRows = false;
+            this.dgvdataventa.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdataventa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvdataventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvdataventa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
-            this.PrecioCompra,
+            this.Precio,
             this.Cantidad,
             this.SubTotal});
-            this.dgvdatacompra.Location = new System.Drawing.Point(198, 241);
-            this.dgvdatacompra.MultiSelect = false;
-            this.dgvdatacompra.Name = "dgvdatacompra";
-            this.dgvdatacompra.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdatacompra.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvdatacompra.RowTemplate.Height = 28;
-            this.dgvdatacompra.Size = new System.Drawing.Size(648, 204);
-            this.dgvdatacompra.TabIndex = 43;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 120;
-            // 
-            // PrecioCompra
-            // 
-            this.PrecioCompra.HeaderText = "Precio Compra";
-            this.PrecioCompra.Name = "PrecioCompra";
-            this.PrecioCompra.ReadOnly = true;
-            this.PrecioCompra.Width = 150;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
+            this.dgvdataventa.Location = new System.Drawing.Point(198, 241);
+            this.dgvdataventa.MultiSelect = false;
+            this.dgvdataventa.Name = "dgvdataventa";
+            this.dgvdataventa.ReadOnly = true;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdataventa.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvdataventa.RowTemplate.Height = 28;
+            this.dgvdataventa.Size = new System.Drawing.Size(648, 204);
+            this.dgvdataventa.TabIndex = 43;
             // 
             // label8
             // 
@@ -408,6 +384,33 @@
             this.btn_exportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_exportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_exportar.UseVisualStyleBackColor = false;
+            this.btn_exportar.Click += new System.EventHandler(this.btn_exportar_Click);
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 120;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 150;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
             // 
             // FRM_detalle_venta
             // 
@@ -421,7 +424,7 @@
             this.Controls.Add(this.txt_monto_pago);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txt_totalpagar);
-            this.Controls.Add(this.dgvdatacompra);
+            this.Controls.Add(this.dgvdataventa);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_buscar_dc);
             this.Controls.Add(this.groupBox1);
@@ -432,11 +435,12 @@
             this.Controls.Add(this.label10);
             this.Name = "FRM_detalle_venta";
             this.Text = "FRM_detalle_venta";
+            this.Load += new System.EventHandler(this.FRM_detalle_venta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdatacompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdataventa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,15 +469,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_totalpagar;
-        private System.Windows.Forms.DataGridView dgvdatacompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridView dgvdataventa;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_monto_pago;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_cambio;
         private FontAwesome.Sharp.IconButton btn_exportar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
     }
 }
