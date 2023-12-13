@@ -30,7 +30,7 @@ namespace CapaDatos
                     idCorrelativo =Convert.ToInt32(cmd.ExecuteScalar());
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     idCorrelativo = 0;
                 }
@@ -119,7 +119,7 @@ namespace CapaDatos
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     obj = new Compra();
                 }
@@ -161,7 +161,7 @@ namespace CapaDatos
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 oLista = new List<Detalle_Compra>();
             }

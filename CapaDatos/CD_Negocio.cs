@@ -115,7 +115,7 @@ namespace CapaDatos
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obtenido = false;
                 LogoBytes = new byte[0];

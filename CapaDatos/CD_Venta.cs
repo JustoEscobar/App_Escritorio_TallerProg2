@@ -29,7 +29,7 @@ namespace CapaDatos
                     idCorrelativo = Convert.ToInt32(cmd.ExecuteScalar());
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     idCorrelativo = 0;
                 }
@@ -56,7 +56,7 @@ namespace CapaDatos
 
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     respuesta = false;
                 }
@@ -83,7 +83,7 @@ namespace CapaDatos
 
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     respuesta = false;
                 }
@@ -177,7 +177,7 @@ namespace CapaDatos
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     obj = new Venta();
                 }
@@ -219,7 +219,7 @@ namespace CapaDatos
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 oLista = new List<Detalle_Venta>();
             }
