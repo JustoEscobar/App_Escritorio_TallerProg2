@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaPresentacion
+namespace CapaPresentacion.Modales
 {
-    public partial class FRMreportes : Form
+    public partial class MD_Acercade : Form
     {
-        public FRMreportes()
+        public MD_Acercade()
         {
             InitializeComponent();
         }

@@ -166,12 +166,6 @@
     <Compile Include="FRMproveedores.Designer.cs">
       <DependentUpon>FRMproveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMreportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMreportes.Designer.cs">
-      <DependentUpon>FRMreportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FRMusuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +220,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\MD_Acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\MD_Acercade.Designer.cs">
+      <DependentUpon>MD_Acercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\MD_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,9 +262,6 @@
     <EmbeddedResource Include="FRMproveedores.resx">
       <DependentUpon>FRMproveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMreportes.resx">
-      <DependentUpon>FRMreportes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FRMusuarios.resx">
       <DependentUpon>FRMusuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\MD_Acercade.resx">
+      <DependentUpon>MD_Acercade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\MD_Cliente.resx">
       <DependentUpon>MD_Cliente.cs</DependentUpon>
