@@ -439,7 +439,7 @@
             // 
             // btn_exportar
             // 
-            this.btn_exportar.BackColor = System.Drawing.Color.White;
+            this.btn_exportar.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_exportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exportar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exportar.IconChar = FontAwesome.Sharp.IconChar.File;

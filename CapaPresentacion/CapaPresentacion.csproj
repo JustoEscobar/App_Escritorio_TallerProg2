@@ -280,6 +280,12 @@
     <EmbeddedResource Include="FRM_Negocio.resx">
       <DependentUpon>FRM_Negocio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRM_ReporteCompras.resx">
+      <DependentUpon>FRM_ReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_ReporteVentas.resx">
+      <DependentUpon>FRM_ReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
