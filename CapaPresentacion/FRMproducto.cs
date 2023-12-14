@@ -36,7 +36,7 @@ namespace CapaPresentacion
             }
             cbo_categoria.DisplayMember = "Texto";
             cbo_categoria.ValueMember = "Valor";
-            cbo_categoria.SelectedIndex = 0;
+            //cbo_categoria.SelectedIndex = 0;
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {

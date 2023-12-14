@@ -136,6 +136,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMbackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMbackup.Designer.cs">
+      <DependentUpon>FRMbackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMcategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,12 @@
     </Compile>
     <Compile Include="FRMcompras.Designer.cs">
       <DependentUpon>FRMcompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMestadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMestadisticas.Designer.cs">
+      <DependentUpon>FRMestadisticas.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMproducto.cs">
       <SubType>Form</SubType>
@@ -247,6 +259,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <EmbeddedResource Include="FRMbackup.resx">
+      <DependentUpon>FRMbackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMcategoria.resx">
       <DependentUpon>FRMcategoria.cs</DependentUpon>
     </EmbeddedResource>

@@ -145,5 +145,15 @@ namespace CapaPresentacion
                 this.Close();
             }
         }
+
+        private void menu_estadisticas_Click(object sender, EventArgs e)
+        {
+            Abrir_Formulario(menu_estadisticas, new FRMestadisticas());
+        }
+
+        private void menu_backup_Click(object sender, EventArgs e)
+        {
+            Abrir_Formulario(menu_backup, new FRMbackup());
+        }
     }
 }
