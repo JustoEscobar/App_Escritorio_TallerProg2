@@ -55,62 +55,65 @@ namespace CapaPresentacion
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            string mensaje = string.Empty;
 
-            Proveedor objProveedor = new Proveedor()
+            if (MessageBox.Show("¿Desea registrar el proveedor?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                IdProveedor = Convert.ToInt32(txt_id.Text),
-                Documento = txt_documento.Text,
-                RazonSocial = txt_razonSocial.Text,
-                Correo = txt_correo.Text,
-                Telefono = txt_telefono.Text,
-                Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
-            };
+                string mensaje = string.Empty;
 
-            if (objProveedor.IdProveedor == 0)
-            {
-                int idProveedorgenerado = new CN_Proveedor().Registrar(objProveedor, out mensaje);
-
-                if (idProveedorgenerado != 0)
+                Proveedor objProveedor = new Proveedor()
                 {
+                    IdProveedor = Convert.ToInt32(txt_id.Text),
+                    Documento = txt_documento.Text,
+                    RazonSocial = txt_razonSocial.Text,
+                    Correo = txt_correo.Text,
+                    Telefono = txt_telefono.Text,
+                    Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
+                };
 
-                    dgvdata.Rows.Add(new object[] { "", idProveedorgenerado, txt_documento.Text, txt_razonSocial.Text, txt_correo.Text, txt_telefono.Text,
+                if (objProveedor.IdProveedor == 0)
+                {
+                    int idProveedorgenerado = new CN_Proveedor().Registrar(objProveedor, out mensaje);
+
+                    if (idProveedorgenerado != 0)
+                    {
+
+                        dgvdata.Rows.Add(new object[] { "", idProveedorgenerado, txt_documento.Text, txt_razonSocial.Text, txt_correo.Text, txt_telefono.Text,
                 ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbo_estado.SelectedItem).Texto.ToString()
                 });
 
-                    Limpiar();
-                }
+                        Limpiar();
+                    }
 
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
 
-            }
-            else
-            {
-                bool resultado = new CN_Proveedor().Editar(objProveedor, out mensaje);
-
-                if (resultado)
-                {
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
-                    row.Cells["Id"].Value = txt_id.Text;
-                    row.Cells["Documento"].Value = txt_documento.Text;
-                    row.Cells["RazonSocial"].Value = txt_razonSocial.Text;
-                    row.Cells["Correo"].Value = txt_correo.Text;
-                    row.Cells["Telefono"].Value = txt_telefono.Text;
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-
-                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    bool resultado = new CN_Proveedor().Editar(objProveedor, out mensaje);
+
+                    if (resultado)
+                    {
+                        DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
+                        row.Cells["Id"].Value = txt_id.Text;
+                        row.Cells["Documento"].Value = txt_documento.Text;
+                        row.Cells["RazonSocial"].Value = txt_razonSocial.Text;
+                        row.Cells["Correo"].Value = txt_correo.Text;
+                        row.Cells["Telefono"].Value = txt_telefono.Text;
+                        row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+                        row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
             }
-
         }
         private void Limpiar()
         {

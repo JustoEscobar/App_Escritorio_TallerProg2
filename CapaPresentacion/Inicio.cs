@@ -28,21 +28,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconMenuItem4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Inicio_Load(object sender, EventArgs e)
         {
             List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);

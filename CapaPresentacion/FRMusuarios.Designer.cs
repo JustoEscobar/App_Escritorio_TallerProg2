@@ -92,7 +92,6 @@
             this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "N° Documento:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -104,7 +103,6 @@
             this.label3.Size = new System.Drawing.Size(110, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre Completo:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txt_documento
             // 
@@ -227,7 +225,6 @@
             this.label9.Size = new System.Drawing.Size(139, 19);
             this.label9.TabIndex = 21;
             this.label9.Text = "DETALLE USUARIO";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // dgvdata
             // 

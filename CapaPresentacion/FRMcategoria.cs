@@ -60,53 +60,56 @@ namespace CapaPresentacion
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            string mensaje = string.Empty;
-
-            Categoria objCategoria = new Categoria()
+            if (MessageBox.Show("¿Desea registrar una categoria?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                IdCategoria = Convert.ToInt32(txt_id.Text),
-                Descripcion = txt_descripcion.Text,
-                Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
-            };
+                string mensaje = string.Empty;
 
-            if (objCategoria.IdCategoria == 0)
-            {
-                int idCategoriagenerado = new CN_Categoria().Registrar(objCategoria, out mensaje);
-
-                if (idCategoriagenerado != 0)
+                Categoria objCategoria = new Categoria()
                 {
+                    IdCategoria = Convert.ToInt32(txt_id.Text),
+                    Descripcion = txt_descripcion.Text,
+                    Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
+                };
 
-                    dgvdata.Rows.Add(new object[] { "", txt_id.Text, txt_descripcion.Text,
+                if (objCategoria.IdCategoria == 0)
+                {
+                    int idCategoriagenerado = new CN_Categoria().Registrar(objCategoria, out mensaje);
+
+                    if (idCategoriagenerado != 0)
+                    {
+
+                        dgvdata.Rows.Add(new object[] { "", txt_id.Text, txt_descripcion.Text,
                 ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbo_estado.SelectedItem).Texto.ToString()
                 });
 
-                    Limpiar();
-                }
+                        Limpiar();
+                    }
 
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
 
-            }
-            else
-            {
-                bool resultado = new CN_Categoria().Editar(objCategoria, out mensaje);
-
-                if (resultado)
-                {
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
-                    row.Cells["Id"].Value = txt_id.Text;
-                    row.Cells["Descripcion"].Value = txt_descripcion.Text;
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-
-                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    bool resultado = new CN_Categoria().Editar(objCategoria, out mensaje);
+
+                    if (resultado)
+                    {
+                        DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
+                        row.Cells["Id"].Value = txt_id.Text;
+                        row.Cells["Descripcion"].Value = txt_descripcion.Text;
+                        row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+                        row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
             }
         }

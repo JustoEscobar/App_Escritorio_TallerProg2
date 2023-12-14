@@ -69,28 +69,30 @@ namespace CapaPresentacion
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            string mensaje = string.Empty;
-
-            Producto objProducto = new Producto()
+            if (MessageBox.Show("¿Desea registrar el producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                IdProducto = Convert.ToInt32(txt_id.Text),
-                Codigo = txt_codigo.Text,
-                Descripcion = txt_descripcion.Text,
-                oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionCombo)cbo_categoria.SelectedItem).Valor) },
-                Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
-            };
+                string mensaje = string.Empty;
 
-            if (objProducto.IdProducto == 0)
-            {
-                int idProductogenerado = new CN_Producto().Registrar(objProducto, out mensaje);
-
-                if (idProductogenerado != 0)
+                Producto objProducto = new Producto()
                 {
+                    IdProducto = Convert.ToInt32(txt_id.Text),
+                    Codigo = txt_codigo.Text,
+                    Descripcion = txt_descripcion.Text,
+                    oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionCombo)cbo_categoria.SelectedItem).Valor) },
+                    Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
+                };
 
-                    dgvdata.Rows.Add(new object[] { 
+                if (objProducto.IdProducto == 0)
+                {
+                    int idProductogenerado = new CN_Producto().Registrar(objProducto, out mensaje);
+
+                    if (idProductogenerado != 0)
+                    {
+
+                        dgvdata.Rows.Add(new object[] {
                         "",
-                     idProductogenerado, 
-                     txt_codigo.Text, 
+                     idProductogenerado,
+                     txt_codigo.Text,
                      txt_descripcion.Text,
                     ((OpcionCombo)cbo_categoria.SelectedItem).Valor.ToString(),
                     ((OpcionCombo)cbo_categoria.SelectedItem).Texto.ToString(),
@@ -101,35 +103,36 @@ namespace CapaPresentacion
                     ((OpcionCombo)cbo_estado.SelectedItem).Texto.ToString()
                     });
 
-                    Limpiar();
-                }
+                        Limpiar();
+                    }
 
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
 
-            }
-            else
-            {
-                bool resultado = new CN_Producto().Editar(objProducto, out mensaje);
-
-                if (resultado)
-                {
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
-                    row.Cells["Id"].Value = txt_id.Text;
-                    row.Cells["Codigo"].Value = txt_codigo.Text;
-                    row.Cells["Descripcion"].Value = txt_descripcion.Text;
-                    row.Cells["IdCategoria"].Value = ((OpcionCombo)cbo_categoria.SelectedItem).Valor.ToString();
-                    row.Cells["Categoria"].Value = ((OpcionCombo)cbo_categoria.SelectedItem).Valor.ToString();
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-
-                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    bool resultado = new CN_Producto().Editar(objProducto, out mensaje);
+
+                    if (resultado)
+                    {
+                        DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
+                        row.Cells["Id"].Value = txt_id.Text;
+                        row.Cells["Codigo"].Value = txt_codigo.Text;
+                        row.Cells["Descripcion"].Value = txt_descripcion.Text;
+                        row.Cells["IdCategoria"].Value = ((OpcionCombo)cbo_categoria.SelectedItem).Valor.ToString();
+                        row.Cells["Categoria"].Value = ((OpcionCombo)cbo_categoria.SelectedItem).Valor.ToString();
+                        row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+                        row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
             }
         }

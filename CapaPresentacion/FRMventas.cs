@@ -311,75 +311,82 @@ namespace CapaPresentacion
 
         private void btn_registrarventa_Click(object sender, EventArgs e)
         {
-            if (txt_doc_cliente.Text == "")
+            if (MessageBox.Show("¿Desea registrar una venta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Debe ingresar el documento del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                if (txt_doc_cliente.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar el documento del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            if (txt_nombre_cliente.Text == "")
-            {
-                MessageBox.Show("Debe ingresar el nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                if (txt_nombre_cliente.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar el nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            if (dgvdataventa.Rows.Count < 1)
-            {
-                MessageBox.Show("Debe ingresar productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+                if (dgvdataventa.Rows.Count < 1)
+                {
+                    MessageBox.Show("Debe ingresar productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            DataTable detalle_venta = new DataTable();
+                //falta agregar que no se registre una venta sin antes verificar que haya pagado (cambio>=0,montopago>= total a pagar)
 
-            detalle_venta.Columns.Add("IdProducto", typeof(int));
-            detalle_venta.Columns.Add("PrecioVenta", typeof(decimal));
-            detalle_venta.Columns.Add("Cantidad", typeof(int));
-            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+                DataTable detalle_venta = new DataTable();
 
-            foreach (DataGridViewRow row in dgvdataventa.Rows)
-            {
-                detalle_venta.Rows.Add(new object[] {
+                detalle_venta.Columns.Add("IdProducto", typeof(int));
+                detalle_venta.Columns.Add("PrecioVenta", typeof(decimal));
+                detalle_venta.Columns.Add("Cantidad", typeof(int));
+                detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+                foreach (DataGridViewRow row in dgvdataventa.Rows)
+                {
+                    detalle_venta.Rows.Add(new object[] {
                         row.Cells["IdProducto"].Value.ToString(),
                         row.Cells["Precio"].Value.ToString(),
                         row.Cells["Cantidad"].Value.ToString(),
                         row.Cells["SubTotal"].Value.ToString()
                  });
+                }
+
+                int idcorrelativo = new CN_Venta().obtenerCorrelativo();
+                string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
+                calcularCambio();
+
+                Venta oVenta = new Venta()
+                {
+                    oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                    TipoDocumento = ((OpcionCombo)cbo_tipodocumento.SelectedItem).Texto,
+                    NumeroDocumento = numeroDocumento,
+                    DocumentoCliente = txt_doc_cliente.Text,
+                    NombreCliente = txt_nombre_cliente.Text,
+                    MontoPago = Convert.ToDecimal(txt_pago.Text),
+                    MontoCambio = Convert.ToDecimal(txt_cambio.Text),
+                    MontoTotal = Convert.ToDecimal(txt_totalpagar.Text)
+                };
+
+                string mensaje = string.Empty;
+                bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
+
+                if (respuesta)
+                {
+                    var result = MessageBox.Show("Numero de venta generada:\n" + numeroDocumento + "\n\n ¿Desea copiar al portapapeles?", "Mensaje",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+
+                        Clipboard.SetText(numeroDocumento);
+
+                    txt_doc_cliente.Text = "0";
+                    txt_nombre_cliente.Text = "";
+                    dgvdataventa.Rows.Clear();
+                    calcularTotal();
+                    txt_pago.Text = "";
+                    txt_cambio.Text = "";
+                }
+                else
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-            int idcorrelativo = new CN_Venta().obtenerCorrelativo();
-            string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
-            calcularCambio();
-
-            Venta oVenta = new Venta() {
-                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
-                TipoDocumento = ((OpcionCombo)cbo_tipodocumento.SelectedItem).Texto,
-                NumeroDocumento = numeroDocumento,
-                DocumentoCliente = txt_doc_cliente.Text,
-                NombreCliente = txt_nombre_cliente.Text,
-                MontoPago = Convert.ToDecimal(txt_pago.Text),
-                MontoCambio = Convert.ToDecimal(txt_cambio.Text),
-                MontoTotal = Convert.ToDecimal(txt_totalpagar.Text)
-            };
-
-            string mensaje = string.Empty;
-            bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
-
-            if (respuesta)
-            {
-                var result = MessageBox.Show("Numero de venta generada:\n" + numeroDocumento + "\n\n ¿Desea copiar al portapapeles?", "Mensaje",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
-
-                    Clipboard.SetText(numeroDocumento);
-
-                txt_doc_cliente.Text = "0";
-                txt_nombre_cliente.Text = "";
-                dgvdataventa.Rows.Clear();
-                calcularTotal();
-                txt_pago.Text = "";
-                txt_cambio.Text = "";
-            }
-            else
-                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

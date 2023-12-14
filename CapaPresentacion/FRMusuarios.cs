@@ -23,21 +23,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FRMusuarios_Load(object sender, EventArgs e)
         {
             cbo_estado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
@@ -83,64 +68,68 @@ namespace CapaPresentacion
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            string mensaje = string.Empty;
-
-            Usuario objusuario = new Usuario()
+            if (MessageBox.Show("¿Desea registrar el usuario", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                IdUsuario = Convert.ToInt32(txt_id.Text),
-                Documento = txt_documento.Text,
-                Nombre = txt_nombre.Text,
-                Correo = txt_correo.Text,
-                Contraseña = txt_clave.Text,
-                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cbo_rol.SelectedItem).Valor)},
-                Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
-            };
+                string mensaje = string.Empty;
 
-            if (objusuario.IdUsuario == 0)
-            {
-                int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
-
-                if (idusuariogenerado != 0)
+                Usuario objusuario = new Usuario()
                 {
+                    IdUsuario = Convert.ToInt32(txt_id.Text),
+                    Documento = txt_documento.Text,
+                    Nombre = txt_nombre.Text,
+                    Correo = txt_correo.Text,
+                    Contraseña = txt_clave.Text,
+                    oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cbo_rol.SelectedItem).Valor) },
+                    Estado = Convert.ToInt32(((OpcionCombo)cbo_estado.SelectedItem).Valor) == 1 ? true : false
+                };
 
-                    dgvdata.Rows.Add(new object[] { "", txt_id.Text, txt_documento.Text, txt_nombre.Text, txt_correo.Text, txt_clave.Text,
+                if (objusuario.IdUsuario == 0)
+                {
+                    int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+                    if (idusuariogenerado != 0)
+                    {
+
+                        dgvdata.Rows.Add(new object[] { "", txt_id.Text, txt_documento.Text, txt_nombre.Text, txt_correo.Text, txt_clave.Text,
                 ((OpcionCombo)cbo_rol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbo_rol.SelectedItem).Texto.ToString(),
                 ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbo_estado.SelectedItem).Texto.ToString()
                 });
 
-                    Limpiar();
-                }
+                        Limpiar();
+                    }
 
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
 
-            }
-            else
-            {
-                bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
 
-                if (resultado)
-                {
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
-                    row.Cells["Id"].Value = txt_id.Text;
-                    row.Cells["Documento"].Value = txt_documento.Text;
-                    row.Cells["Nombre"].Value = txt_nombre.Text;
-                    row.Cells["Correo"].Value = txt_correo.Text;
-                    row.Cells["Contraseña"].Value = txt_clave.Text;
-                    row.Cells["IdRol"].Value = ((OpcionCombo)cbo_rol.SelectedItem).Valor.ToString();
-                    row.Cells["Rol"].Value = ((OpcionCombo)cbo_rol.SelectedItem).Valor.ToString();
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
-
-                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                        bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
+
+                        if (resultado)
+                        {
+                            DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txt_indice.Text)];
+                            row.Cells["Id"].Value = txt_id.Text;
+                            row.Cells["Documento"].Value = txt_documento.Text;
+                            row.Cells["Nombre"].Value = txt_nombre.Text;
+                            row.Cells["Correo"].Value = txt_correo.Text;
+                            row.Cells["Contraseña"].Value = txt_clave.Text;
+                            row.Cells["IdRol"].Value = ((OpcionCombo)cbo_rol.SelectedItem).Valor.ToString();
+                            row.Cells["Rol"].Value = ((OpcionCombo)cbo_rol.SelectedItem).Valor.ToString();
+                            row.Cells["EstadoValor"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+                            row.Cells["Estado"].Value = ((OpcionCombo)cbo_estado.SelectedItem).Valor.ToString();
+
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show(mensaje);
+                        }
                 }
             }
         }
