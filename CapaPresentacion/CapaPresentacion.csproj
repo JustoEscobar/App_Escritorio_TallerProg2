@@ -271,6 +271,9 @@
     <EmbeddedResource Include="FRMcompras.resx">
       <DependentUpon>FRMcompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMestadisticas.resx">
+      <DependentUpon>FRMestadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMproducto.resx">
       <DependentUpon>FRMproducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +347,10 @@
     <None Include="Resources\logo1.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{632A541A-192B-4D07-B40B-9B5875ED258E}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
       <Project>{aa6120b8-2211-4833-994e-ec8a0195b644}</Project>
       <Name>CapaEntidad</Name>

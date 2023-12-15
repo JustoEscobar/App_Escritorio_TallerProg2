@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label2.Text" xml:space="preserve">
-    <value>EL SOFTWARE SE PROPORCIONA TAL CUAL, SIN GARANTIA DE NINGUN TIPO, EMPRESA O IMPLICITA, EN NINGUN CASO EL CREADOR DEL SOFTWARE SERÁ RESPONSABLE DE CUALQUIER RECLAMO, DAÑO U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCION DE CONTRATO, AGRAVIO O DE OTRO MODO, QUE SURJA DE FUERA DE O EN RELACION CON EL SOFTWARE O EL USO U OTRAS NEGOCIACIONES EN  EL SOFTWARE. </value>
-  </data>
 </root>

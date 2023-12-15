@@ -202,7 +202,6 @@
             this.cbo_estado.Name = "cbo_estado";
             this.cbo_estado.Size = new System.Drawing.Size(177, 21);
             this.cbo_estado.TabIndex = 17;
-
             // 
             // label8
             // 
@@ -497,7 +496,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1044, 487);
             this.Controls.Add(this.txt_indice);
             this.Controls.Add(this.btn_limpiar_buscador);

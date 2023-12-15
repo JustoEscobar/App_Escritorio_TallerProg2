@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
 using Microsoft.Win32;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
@@ -30,23 +31,23 @@ namespace CapaPresentacion
         private void btn_conectarBD_Click(object sender, EventArgs e)
         {
             
-        //    using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
-        //    {
-        //        SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", oconexion);
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        DataSet ds = new DataSet();
-        //        da.Fill(ds);
-        //        if (ds.Tables[0].Rows.Count > 0)
-        //        {
-        //            foreach (DataRow fila in ds.Tables[0].Rows)
-        //            {
-        //                cbo_base_datos.Items.Add(fila[0].ToString());
-        //            }
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", oconexion);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow fila in ds.Tables[0].Rows)
+                    {
+                        cbo_base_datos.Items.Add(fila[0].ToString());
+                    }
 
-        //            cbo_base_datos.SelectedIndex = 0;
+                    cbo_base_datos.SelectedIndex = 0;
 
-        //        }
-        //    }
+                }
+            }
         }
 
         private void btn_abrir_respaldo_Click(object sender, EventArgs e)
