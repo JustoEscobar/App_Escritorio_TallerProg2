@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FRMestadisticas : Form
+    public partial class FRM_GraficoTorta : Form
     {
-        public FRMestadisticas()
+        public FRM_GraficoTorta()
         {
             InitializeComponent();
+        }
+
+        private void FRM_GraficoBarras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

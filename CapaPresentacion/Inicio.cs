@@ -82,11 +82,6 @@ namespace CapaPresentacion
             Abrir_Formulario(menu_mantenedor, new FRMproducto());
         }
 
-        private void menu_ventas_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void submenu_registrar_venta_Click(object sender, EventArgs e)
         {
             Abrir_Formulario(menu_ventas, new FRMventas(usuarioActual));
@@ -146,14 +141,19 @@ namespace CapaPresentacion
             }
         }
 
-        private void menu_estadisticas_Click(object sender, EventArgs e)
-        {
-            Abrir_Formulario(menu_estadisticas, new FRMestadisticas());
-        }
-
         private void menu_backup_Click(object sender, EventArgs e)
         {
             Abrir_Formulario(menu_backup, new FRMbackup());
+        }
+
+        private void submenu_grafico_barra_Click(object sender, EventArgs e)
+        {
+            Abrir_Formulario(menu_estadisticas, new FRM_GraficoBarra());
+        }
+
+        private void submenu_graficotorta_Click(object sender, EventArgs e)
+        {
+            Abrir_Formulario(menu_estadisticas, new FRM_GraficoTorta());
         }
     }
 }

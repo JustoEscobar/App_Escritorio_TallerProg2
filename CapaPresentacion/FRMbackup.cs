@@ -28,7 +28,7 @@ namespace CapaPresentacion
 
         }
 
-        private void btn_conectarBD_Click(object sender, EventArgs e)
+        private void btn_conectarBD_Click(object sender, EventArgs e) 
         {
             
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
@@ -71,7 +71,7 @@ namespace CapaPresentacion
                     Directory.CreateDirectory(@"D:\Backup");
                 }
 
-                System.Diagnostics.Process.Start("cmd", $"/k sqlcmd -S localhost\\SQLEXPRESS -E -Q \"BACKUP DATABASE [{cbo_base_datos.Text}] TO DISK='{txt_abrir_ruta.Text}'\"");
+                System.Diagnostics.Process.Start("cmd", $"/k sqlcmd -S DESKTOP-864D066\\SQLEXPRESS -E -Q \"BACKUP DATABASE [{cbo_base_datos.Text}] TO DISK='{txt_abrir_ruta.Text}'\"");
             }
             catch (Exception ex)
             {
@@ -98,7 +98,7 @@ namespace CapaPresentacion
 
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = $"/k Sqlcmd -S localhost\\SQLEXPRESS -E -Q \"RESTORE DATABASE [{baseName}] FROM DISK = '{rutaRestaurar}'\"";
+            startInfo.Arguments = $"/k Sqlcmd -S DESKTOP-864D066\\SQLEXPRESS -E -Q \"RESTORE DATABASE [{baseName}] FROM DISK = '{rutaRestaurar}'\"";
             System.Diagnostics.Process.Start(startInfo);
         }
     }

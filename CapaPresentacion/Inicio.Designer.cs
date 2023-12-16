@@ -52,8 +52,8 @@
             this.submenu_reporteCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.submenu_reporteVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_estadisticas = new FontAwesome.Sharp.IconMenuItem();
-            this.ventasPorPrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.graficoBarrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenu_grafico_barra = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenu_graficotorta = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_backup = new FontAwesome.Sharp.IconMenuItem();
             this.menu_acercade = new FontAwesome.Sharp.IconMenuItem();
             this.btn_salir = new FontAwesome.Sharp.IconButton();
@@ -230,7 +230,6 @@
             this.menu_ventas.Size = new System.Drawing.Size(80, 67);
             this.menu_ventas.Text = "Ventas";
             this.menu_ventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menu_ventas.Click += new System.EventHandler(this.menu_ventas_Click);
             // 
             // submenu_registrar_venta
             // 
@@ -346,8 +345,8 @@
             // 
             this.menu_estadisticas.AutoSize = false;
             this.menu_estadisticas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ventasPorPrToolStripMenuItem,
-            this.graficoBarrasToolStripMenuItem});
+            this.submenu_grafico_barra,
+            this.submenu_graficotorta});
             this.menu_estadisticas.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
             this.menu_estadisticas.IconColor = System.Drawing.Color.Black;
             this.menu_estadisticas.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -356,19 +355,20 @@
             this.menu_estadisticas.Size = new System.Drawing.Size(122, 67);
             this.menu_estadisticas.Text = "Estadisticas";
             this.menu_estadisticas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menu_estadisticas.Click += new System.EventHandler(this.menu_estadisticas_Click);
             // 
-            // ventasPorPrToolStripMenuItem
+            // submenu_grafico_barra
             // 
-            this.ventasPorPrToolStripMenuItem.Name = "ventasPorPrToolStripMenuItem";
-            this.ventasPorPrToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.ventasPorPrToolStripMenuItem.Text = "Grafico de torta";
+            this.submenu_grafico_barra.Name = "submenu_grafico_barra";
+            this.submenu_grafico_barra.Size = new System.Drawing.Size(180, 22);
+            this.submenu_grafico_barra.Text = "Grafico barra";
+            this.submenu_grafico_barra.Click += new System.EventHandler(this.submenu_grafico_barra_Click);
             // 
-            // graficoBarrasToolStripMenuItem
+            // submenu_graficotorta
             // 
-            this.graficoBarrasToolStripMenuItem.Name = "graficoBarrasToolStripMenuItem";
-            this.graficoBarrasToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.graficoBarrasToolStripMenuItem.Text = "Grafico barras";
+            this.submenu_graficotorta.Name = "submenu_graficotorta";
+            this.submenu_graficotorta.Size = new System.Drawing.Size(180, 22);
+            this.submenu_graficotorta.Text = "Grafico torta";
+            this.submenu_graficotorta.Click += new System.EventHandler(this.submenu_graficotorta_Click);
             // 
             // menu_backup
             // 
@@ -645,8 +645,8 @@
         private FontAwesome.Sharp.IconMenuItem menu_backup;
         private FontAwesome.Sharp.IconMenuItem menu_estadisticas;
         private FontAwesome.Sharp.IconMenuItem menu_acercade;
-        private System.Windows.Forms.ToolStripMenuItem ventasPorPrToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem graficoBarrasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem submenu_grafico_barra;
+        private System.Windows.Forms.ToolStripMenuItem submenu_graficotorta;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem contenidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem índiceToolStripMenuItem;

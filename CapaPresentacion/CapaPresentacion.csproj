@@ -121,6 +121,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -160,12 +161,6 @@
     <Compile Include="FRMcompras.Designer.cs">
       <DependentUpon>FRMcompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMestadisticas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMestadisticas.Designer.cs">
-      <DependentUpon>FRMestadisticas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FRMproducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +196,18 @@
     </Compile>
     <Compile Include="FRM_detalle_venta.Designer.cs">
       <DependentUpon>FRM_detalle_venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_GraficoTorta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_GraficoTorta.Designer.cs">
+      <DependentUpon>FRM_GraficoTorta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_GraficoBarra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_GraficoBarra.Designer.cs">
+      <DependentUpon>FRM_GraficoBarra.cs</DependentUpon>
     </Compile>
     <Compile Include="FRM_Negocio.cs">
       <SubType>Form</SubType>
@@ -271,9 +278,6 @@
     <EmbeddedResource Include="FRMcompras.resx">
       <DependentUpon>FRMcompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMestadisticas.resx">
-      <DependentUpon>FRMestadisticas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FRMproducto.resx">
       <DependentUpon>FRMproducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_detalle_venta.resx">
       <DependentUpon>FRM_detalle_venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_GraficoTorta.resx">
+      <DependentUpon>FRM_GraficoTorta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_GraficoBarra.resx">
+      <DependentUpon>FRM_GraficoBarra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_Negocio.resx">
       <DependentUpon>FRM_Negocio.cs</DependentUpon>
