@@ -1,4 +1,7 @@
-﻿namespace CapaPresentacion
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
 {
     partial class Login
     {
@@ -29,14 +32,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_documento = new System.Windows.Forms.TextBox();
-            this.txt_clave = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Contraseña = new System.Windows.Forms.Label();
             this.btn_ingresar = new FontAwesome.Sharp.IconButton();
             this.btn_cancelar = new FontAwesome.Sharp.IconButton();
             this.logo_principal = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_clave = new System.Windows.Forms.TextBox();
+            this.txt_documento = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo_principal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,46 +51,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 191);
             this.label1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(237, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 33);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "INICIAR SESION";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txt_documento
-            // 
-            this.txt_documento.Location = new System.Drawing.Point(228, 68);
-            this.txt_documento.Name = "txt_documento";
-            this.txt_documento.Size = new System.Drawing.Size(154, 20);
-            this.txt_documento.TabIndex = 3;
-            this.txt_documento.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txt_clave
-            // 
-            this.txt_clave.Location = new System.Drawing.Point(228, 107);
-            this.txt_clave.Name = "txt_clave";
-            this.txt_clave.PasswordChar = '*';
-            this.txt_clave.Size = new System.Drawing.Size(154, 20);
-            this.txt_clave.TabIndex = 4;
-            this.txt_clave.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(225, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Documento";
             // 
             // Contraseña
             // 
@@ -147,10 +110,47 @@
             this.logo_principal.TabIndex = 9;
             this.logo_principal.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(225, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Documento";
+            // 
+            // txt_clave
+            // 
+            this.txt_clave.Location = new System.Drawing.Point(228, 107);
+            this.txt_clave.Name = "txt_clave";
+            this.txt_clave.PasswordChar = '*';
+            this.txt_clave.Size = new System.Drawing.Size(154, 20);
+            this.txt_clave.TabIndex = 4;
+            // 
+            // txt_documento
+            // 
+            this.txt_documento.Location = new System.Drawing.Point(228, 68);
+            this.txt_documento.Name = "txt_documento";
+            this.txt_documento.Size = new System.Drawing.Size(154, 20);
+            this.txt_documento.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(237, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 33);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "INICIAR SESION";
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(426, 191);
             this.Controls.Add(this.logo_principal);
@@ -166,23 +166,22 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo_principal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_documento;
-        private System.Windows.Forms.TextBox txt_clave;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Contraseña;
         private FontAwesome.Sharp.IconButton btn_ingresar;
         private FontAwesome.Sharp.IconButton btn_cancelar;
         private System.Windows.Forms.PictureBox logo_principal;
+        private Label label3;
+        private TextBox txt_clave;
+        private TextBox txt_documento;
+        private Label label2;
     }
 }
+

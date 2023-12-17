@@ -20,21 +20,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,7 +28,7 @@ namespace CapaPresentacion
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
             List<Usuario> TEST = new CN_Usuario().Listar();
-            
+
             Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txt_documento.Text && u.Contraseña == txt_clave.Text).FirstOrDefault();
 
             if (ousuario != null)
@@ -62,26 +47,11 @@ namespace CapaPresentacion
 
         }
 
-        private void frm_closing (object sender, FormClosingEventArgs e)
+        private void frm_closing(object sender, FormClosingEventArgs e)
         {
             txt_documento.Text = "";
             txt_clave.Text = "";
             this.Show();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -331,6 +331,22 @@ namespace CapaPresentacion
                     return;
                 }
 
+
+                if (txt_pago.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar con cuanto va a pagar el cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Validar que el monto de pago sea mayor o igual al monto total a pagar
+                decimal montoPago = Convert.ToDecimal(txt_pago.Text);
+                decimal montoTotalPagar = Convert.ToDecimal(txt_totalpagar.Text);
+
+                if (montoPago < montoTotalPagar)
+                {
+                    MessageBox.Show("El monto de pago no puede ser menor al monto total a pagar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
                 //falta agregar que no se registre una venta sin antes verificar que haya pagado (cambio>=0,montopago>= total a pagar)
 
                 DataTable detalle_venta = new DataTable();

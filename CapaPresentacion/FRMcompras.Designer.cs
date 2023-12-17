@@ -38,6 +38,7 @@
             this.txt_fecha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar_proveedor = new FontAwesome.Sharp.IconButton();
             this.txt_idproveedor = new System.Windows.Forms.TextBox();
             this.txt_razonSocial = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txt_precioventa = new System.Windows.Forms.TextBox();
             this.txt_preciocompra = new System.Windows.Forms.TextBox();
+            this.btn_buscarproducto = new FontAwesome.Sharp.IconButton();
             this.txt_idproducto = new System.Windows.Forms.TextBox();
             this.txt_producto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.txt_totalpagar = new System.Windows.Forms.TextBox();
             this.btn_registrarcompra = new FontAwesome.Sharp.IconButton();
             this.btn_agregar = new FontAwesome.Sharp.IconButton();
-            this.btn_buscarproducto = new FontAwesome.Sharp.IconButton();
-            this.btn_buscar_proveedor = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,7 +81,7 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(141, 9);
+            this.label10.Location = new System.Drawing.Point(188, 9);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.label10.Size = new System.Drawing.Size(694, 469);
@@ -94,7 +94,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(160, 26);
+            this.label1.Location = new System.Drawing.Point(207, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 19);
             this.label1.TabIndex = 25;
@@ -108,7 +108,7 @@
             this.groupBox1.Controls.Add(this.txt_fecha);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(164, 64);
+            this.groupBox1.Location = new System.Drawing.Point(211, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 87);
             this.groupBox1.TabIndex = 26;
@@ -158,12 +158,31 @@
             this.groupBox2.Controls.Add(this.txt_docproveedor);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(477, 64);
+            this.groupBox2.Location = new System.Drawing.Point(524, 64);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(330, 87);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Proveedor";
+            // 
+            // btn_buscar_proveedor
+            // 
+            this.btn_buscar_proveedor.BackColor = System.Drawing.Color.White;
+            this.btn_buscar_proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_buscar_proveedor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_buscar_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_buscar_proveedor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_buscar_proveedor.ForeColor = System.Drawing.Color.White;
+            this.btn_buscar_proveedor.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.btn_buscar_proveedor.IconColor = System.Drawing.Color.Black;
+            this.btn_buscar_proveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_buscar_proveedor.IconSize = 16;
+            this.btn_buscar_proveedor.Location = new System.Drawing.Point(149, 36);
+            this.btn_buscar_proveedor.Name = "btn_buscar_proveedor";
+            this.btn_buscar_proveedor.Size = new System.Drawing.Size(30, 21);
+            this.btn_buscar_proveedor.TabIndex = 29;
+            this.btn_buscar_proveedor.UseVisualStyleBackColor = false;
+            this.btn_buscar_proveedor.Click += new System.EventHandler(this.btn_buscar_proveedor_Click);
             // 
             // txt_idproveedor
             // 
@@ -222,7 +241,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(164, 157);
+            this.groupBox3.Location = new System.Drawing.Point(211, 157);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(643, 87);
             this.groupBox3.TabIndex = 30;
@@ -241,9 +260,19 @@
             // numeric_cantidad
             // 
             this.numeric_cantidad.Location = new System.Drawing.Point(556, 52);
+            this.numeric_cantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numeric_cantidad.Name = "numeric_cantidad";
             this.numeric_cantidad.Size = new System.Drawing.Size(81, 21);
             this.numeric_cantidad.TabIndex = 35;
+            this.numeric_cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -278,6 +307,25 @@
             this.txt_preciocompra.Size = new System.Drawing.Size(88, 21);
             this.txt_preciocompra.TabIndex = 31;
             this.txt_preciocompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_preciocompra_KeyPress);
+            // 
+            // btn_buscarproducto
+            // 
+            this.btn_buscarproducto.BackColor = System.Drawing.Color.White;
+            this.btn_buscarproducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_buscarproducto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_buscarproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_buscarproducto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_buscarproducto.ForeColor = System.Drawing.Color.White;
+            this.btn_buscarproducto.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.btn_buscarproducto.IconColor = System.Drawing.Color.Black;
+            this.btn_buscarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_buscarproducto.IconSize = 16;
+            this.btn_buscarproducto.Location = new System.Drawing.Point(152, 53);
+            this.btn_buscarproducto.Name = "btn_buscarproducto";
+            this.btn_buscarproducto.Size = new System.Drawing.Size(30, 21);
+            this.btn_buscarproducto.TabIndex = 30;
+            this.btn_buscarproducto.UseVisualStyleBackColor = false;
+            this.btn_buscarproducto.Click += new System.EventHandler(this.btn_buscarproducto_Click);
             // 
             // txt_idproducto
             // 
@@ -342,7 +390,7 @@
             this.Cantidad,
             this.SubTotal,
             this.btn_eliminar});
-            this.dgvdatacompra.Location = new System.Drawing.Point(164, 259);
+            this.dgvdatacompra.Location = new System.Drawing.Point(211, 259);
             this.dgvdatacompra.MultiSelect = false;
             this.dgvdatacompra.Name = "dgvdatacompra";
             this.dgvdatacompra.ReadOnly = true;
@@ -408,7 +456,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(720, 387);
+            this.label12.Location = new System.Drawing.Point(767, 387);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 16);
             this.label12.TabIndex = 38;
@@ -418,7 +466,7 @@
             // 
             this.txt_totalpagar.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_totalpagar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_totalpagar.Location = new System.Drawing.Point(723, 406);
+            this.txt_totalpagar.Location = new System.Drawing.Point(770, 406);
             this.txt_totalpagar.Name = "txt_totalpagar";
             this.txt_totalpagar.Size = new System.Drawing.Size(88, 20);
             this.txt_totalpagar.TabIndex = 37;
@@ -431,7 +479,7 @@
             this.btn_registrarcompra.IconColor = System.Drawing.Color.DodgerBlue;
             this.btn_registrarcompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_registrarcompra.IconSize = 22;
-            this.btn_registrarcompra.Location = new System.Drawing.Point(723, 432);
+            this.btn_registrarcompra.Location = new System.Drawing.Point(770, 432);
             this.btn_registrarcompra.Name = "btn_registrarcompra";
             this.btn_registrarcompra.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.btn_registrarcompra.Size = new System.Drawing.Size(88, 31);
@@ -447,7 +495,7 @@
             this.btn_agregar.IconColor = System.Drawing.Color.ForestGreen;
             this.btn_agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_agregar.IconSize = 40;
-            this.btn_agregar.Location = new System.Drawing.Point(723, 259);
+            this.btn_agregar.Location = new System.Drawing.Point(770, 259);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(88, 56);
             this.btn_agregar.TabIndex = 33;
@@ -455,44 +503,6 @@
             this.btn_agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // btn_buscarproducto
-            // 
-            this.btn_buscarproducto.BackColor = System.Drawing.Color.White;
-            this.btn_buscarproducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscarproducto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_buscarproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscarproducto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarproducto.ForeColor = System.Drawing.Color.White;
-            this.btn_buscarproducto.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.btn_buscarproducto.IconColor = System.Drawing.Color.Black;
-            this.btn_buscarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_buscarproducto.IconSize = 16;
-            this.btn_buscarproducto.Location = new System.Drawing.Point(152, 53);
-            this.btn_buscarproducto.Name = "btn_buscarproducto";
-            this.btn_buscarproducto.Size = new System.Drawing.Size(30, 21);
-            this.btn_buscarproducto.TabIndex = 30;
-            this.btn_buscarproducto.UseVisualStyleBackColor = false;
-            this.btn_buscarproducto.Click += new System.EventHandler(this.btn_buscarproducto_Click);
-            // 
-            // btn_buscar_proveedor
-            // 
-            this.btn_buscar_proveedor.BackColor = System.Drawing.Color.White;
-            this.btn_buscar_proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar_proveedor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_buscar_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar_proveedor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscar_proveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar_proveedor.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.btn_buscar_proveedor.IconColor = System.Drawing.Color.Black;
-            this.btn_buscar_proveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_buscar_proveedor.IconSize = 16;
-            this.btn_buscar_proveedor.Location = new System.Drawing.Point(149, 36);
-            this.btn_buscar_proveedor.Name = "btn_buscar_proveedor";
-            this.btn_buscar_proveedor.Size = new System.Drawing.Size(30, 21);
-            this.btn_buscar_proveedor.TabIndex = 29;
-            this.btn_buscar_proveedor.UseVisualStyleBackColor = false;
-            this.btn_buscar_proveedor.Click += new System.EventHandler(this.btn_buscar_proveedor_Click);
             // 
             // FRMcompras
             // 

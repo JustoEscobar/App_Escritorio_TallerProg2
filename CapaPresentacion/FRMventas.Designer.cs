@@ -84,7 +84,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(194, 26);
+            this.label1.Location = new System.Drawing.Point(221, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 19);
             this.label1.TabIndex = 27;
@@ -95,7 +95,7 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(175, 9);
+            this.label10.Location = new System.Drawing.Point(202, 9);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.label10.Size = new System.Drawing.Size(694, 469);
@@ -110,7 +110,7 @@
             this.groupBox1.Controls.Add(this.txt_fecha);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(198, 57);
+            this.groupBox1.Location = new System.Drawing.Point(225, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 87);
             this.groupBox1.TabIndex = 28;
@@ -159,7 +159,7 @@
             this.groupBox2.Controls.Add(this.txt_doc_cliente);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(504, 57);
+            this.groupBox2.Location = new System.Drawing.Point(531, 57);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(341, 87);
             this.groupBox2.TabIndex = 29;
@@ -234,7 +234,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(198, 150);
+            this.groupBox3.Location = new System.Drawing.Point(225, 150);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(647, 87);
             this.groupBox3.TabIndex = 31;
@@ -253,9 +253,19 @@
             // numeric_cantidad
             // 
             this.numeric_cantidad.Location = new System.Drawing.Point(556, 52);
+            this.numeric_cantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numeric_cantidad.Name = "numeric_cantidad";
             this.numeric_cantidad.Size = new System.Drawing.Size(81, 21);
             this.numeric_cantidad.TabIndex = 35;
+            this.numeric_cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -356,7 +366,7 @@
             this.btn_agregar.IconColor = System.Drawing.Color.ForestGreen;
             this.btn_agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_agregar.IconSize = 40;
-            this.btn_agregar.Location = new System.Drawing.Point(757, 243);
+            this.btn_agregar.Location = new System.Drawing.Point(784, 243);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(88, 56);
             this.btn_agregar.TabIndex = 35;
@@ -386,7 +396,7 @@
             this.Cantidad,
             this.SubTotal,
             this.btn_eliminar});
-            this.dgvdataventa.Location = new System.Drawing.Point(198, 243);
+            this.dgvdataventa.Location = new System.Drawing.Point(225, 243);
             this.dgvdataventa.MultiSelect = false;
             this.dgvdataventa.Name = "dgvdataventa";
             this.dgvdataventa.ReadOnly = true;
@@ -444,7 +454,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(754, 302);
+            this.label12.Location = new System.Drawing.Point(781, 302);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 16);
             this.label12.TabIndex = 40;
@@ -454,7 +464,7 @@
             // 
             this.txt_totalpagar.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_totalpagar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_totalpagar.Location = new System.Drawing.Point(759, 321);
+            this.txt_totalpagar.Location = new System.Drawing.Point(786, 321);
             this.txt_totalpagar.Name = "txt_totalpagar";
             this.txt_totalpagar.Size = new System.Drawing.Size(88, 20);
             this.txt_totalpagar.TabIndex = 39;
@@ -465,7 +475,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(756, 344);
+            this.label13.Location = new System.Drawing.Point(783, 344);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 16);
             this.label13.TabIndex = 38;
@@ -473,7 +483,7 @@
             // 
             // txt_pago
             // 
-            this.txt_pago.Location = new System.Drawing.Point(757, 362);
+            this.txt_pago.Location = new System.Drawing.Point(784, 362);
             this.txt_pago.Name = "txt_pago";
             this.txt_pago.Size = new System.Drawing.Size(88, 20);
             this.txt_pago.TabIndex = 37;
@@ -485,7 +495,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(756, 385);
+            this.label14.Location = new System.Drawing.Point(783, 385);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(54, 16);
             this.label14.TabIndex = 42;
@@ -493,7 +503,7 @@
             // 
             // txt_cambio
             // 
-            this.txt_cambio.Location = new System.Drawing.Point(757, 403);
+            this.txt_cambio.Location = new System.Drawing.Point(784, 403);
             this.txt_cambio.Name = "txt_cambio";
             this.txt_cambio.Size = new System.Drawing.Size(88, 20);
             this.txt_cambio.TabIndex = 41;
@@ -505,7 +515,7 @@
             this.btn_registrarventa.IconColor = System.Drawing.Color.DodgerBlue;
             this.btn_registrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_registrarventa.IconSize = 22;
-            this.btn_registrarventa.Location = new System.Drawing.Point(757, 431);
+            this.btn_registrarventa.Location = new System.Drawing.Point(784, 431);
             this.btn_registrarventa.Name = "btn_registrarventa";
             this.btn_registrarventa.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.btn_registrarventa.Size = new System.Drawing.Size(88, 31);
