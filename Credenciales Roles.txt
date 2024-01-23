@@ -1,0 +1,11 @@
+Para Administrador/Directivo:
+	Documento: 1010
+	Contraseña: 123
+
+Para Gerente/Superior
+	Documento: 2020
+	Contraseña: 456
+
+Para Empleado/Operario
+	Documento: 3030
+	Contraseña: 789
